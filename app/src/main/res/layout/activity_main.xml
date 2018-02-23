@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.sim.gravity.MainActivity" >
+
+    <data>
+        <variable
+            name="model"
+            type="com.sim.howtofall.KinematicModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView_dStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d ="
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editText_t"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@{model.d}"
+            app:layout_constraintBottom_toTopOf="@+id/editText_t"
+            app:layout_constraintLeft_toRightOf="@+id/guideline"
+            app:layout_constraintRight_toLeftOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_dEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.d_units}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editText_t"
+            app:layout_constraintLeft_toRightOf="@+id/guideline2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_tStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="t ="
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editText_a"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editText_d" />
+
+        <EditText
+            android:id="@+id/editText_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@{model.t}"
+            app:layout_constraintBottom_toTopOf="@+id/editText_a"
+            app:layout_constraintLeft_toRightOf="@+id/guideline"
+            app:layout_constraintRight_toLeftOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/editText_d" />
+
+        <TextView
+            android:id="@+id/textView_tEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="s"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editText_a"
+            app:layout_constraintLeft_toRightOf="@+id/guideline2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_d" />
+
+        <TextView
+            android:id="@+id/textView_aStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="a ="
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editText_vi"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editText_t" />
+
+        <EditText
+            android:id="@+id/editText_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:text="@{model.a}"
+            app:layout_constraintBottom_toTopOf="@+id/editText_vi"
+            app:layout_constraintLeft_toRightOf="@+id/guideline"
+            app:layout_constraintRight_toLeftOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/editText_t" />
+
+        <TextView
+            android:id="@+id/textView_aEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.accelerationUnits}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editText_vi"
+            app:layout_constraintLeft_toRightOf="@+id/guideline2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_t" />
+
+        <TextView
+            android:id="@+id/textView_viStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="vi ="
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editText_vf"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editText_a" />
+
+        <EditText
+            android:id="@+id/editText_vi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@{model.vi}"
+            app:layout_constraintBottom_toTopOf="@+id/editText_vf"
+            app:layout_constraintLeft_toRightOf="@+id/guideline"
+            app:layout_constraintRight_toLeftOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/editText_a" />
+
+        <TextView
+            android:id="@+id/textView_viEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.v_units}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editText_vf"
+            app:layout_constraintLeft_toRightOf="@+id/guideline2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_a" />
+
+        <TextView
+            android:id="@+id/textView_vfStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="vf ="
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editText_vi" />
+
+        <EditText
+            android:id="@+id/editText_vf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:text="@{model.vf}"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+            app:layout_constraintLeft_toRightOf="@+id/guideline"
+            app:layout_constraintRight_toLeftOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/editText_vi" />
+
+        <TextView
+            android:id="@+id/textView_vfEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.v_units}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+            app:layout_constraintLeft_toRightOf="@+id/guideline2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_vi" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_vf"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <RadioButton
+                android:id="@+id/radioButtonMetric"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="@{(v) -> model.setMetric(v)}"
+                android:text="m"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonUS"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> model.setImperial(v)}"
+                android:text="f"
+                android:textSize="20sp" />
+        </RadioGroup>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>
